@@ -2,26 +2,17 @@
 
 import InputField from '@/app/features/auth/components/InputField'
 import React from 'react'
-import Button from './components/Button'
+
 import { useSignupForm } from '@/app/features/auth/components/hooks/useSignupForm'
+import Button from '../signup/components/Button'
 import Link from 'next/link'
 
-const Signup = () => {
+const Login = () => {
     const {form, onSubmit} = useSignupForm();
   return (
     <div className='mx-auto max-w-sm my-14'>
-        <h2 className='text-center font-medium text-2xl mb-4'>新規登録</h2>
+        <h2 className='text-center font-medium text-2xl mb-4'>ログイン</h2>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-            <InputField 
-                label="ユーザー名" 
-                name="username" 
-                type="text" 
-                placeholder='ユーザー名'
-                register={form.register}
-            />
-            {form.formState.errors.username && (
-              <p className='text-red-500'>{form.formState.errors.username?.message}</p>
-            )}
             <InputField 
                 label="メールアドレス" 
                 name="email" 
@@ -44,14 +35,14 @@ const Signup = () => {
             )}
            
             <div className='mt-4'>
-                <Button type='submit' colorClass='bg-blue-500 hover:bg-blue-700'>新規登録</Button>
+                <Button type='submit' colorClass='bg-blue-500 hover:bg-blue-700'>ログイン</Button>
             </div>
         </form>
-        <Link href="/auth/login" className='mt-4 block text-center text-blue-400'>
-            既に登録済みの方はこちら
+        <Link href="/auth/signup" className='mt-4 block text-center text-blue-400'>
+            初めてご利用の方はこちら
         </Link>
     </div>
   )
 }
 
-export default Signup
+export default Login

@@ -10,7 +10,7 @@ export default function Home() {
           <Link href={"/auth/signup"} className="bg-red-500 py-2 px-4 rounded-md text-white hover:bg-red-600 duration-200">新規登録</Link>
         </div>
         <div>
-          <Link href={"/auth/signup"} className="bg-blue-500 py-2 px-4 rounded-md text-white hover:bg-red-600 duration-200">ログイン</Link>
+          <Link href={"/auth/login"} className="bg-blue-500 py-2 px-4 rounded-md text-white hover:bg-blue-600 duration-200">ログイン</Link>
         </div>
       </div>
     </main>
